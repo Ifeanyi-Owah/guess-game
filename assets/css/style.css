@@ -1,0 +1,44 @@
+
+body {
+    font-family: 'Permanent Marker', cursive, 'Roboto', sans-serif;
+    background: #F3CA6B;
+    
+}
+
+h1 {
+    font-family: 'Permanent Marker', 'Roboto', sans-serif;
+}
+
+#gameOver{
+    height: 200px;
+    width: 500px;
+    background: linear-gradient(#F3CA6B, #F3706C);
+    background: -webkit-linear-gradient(#F3CA6B, #F3706C);
+    background: -o-linear-gradient(#F3CA6B, #F3706C);
+    background: -moz-linear-gradient(#F3CA6B, #F3706C);
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    top: 100px;
+    left: 45px;
+    z-index: 2;
+    display: none;
+    
+}
+
+p {
+  font-size: 20px;
+}
+
+.winGame {
+    color:  #99B898; 
+    font-size: 20px;
+}
+
+.looseGame{
+    color: 	#DC143C;
+    font-size: 20px;
+    
+}

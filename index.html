@@ -4,10 +4,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
         <title>Guessing | Game</title>
     </head>
     <body>
-        <h1 id="guess" ></h1>
+        <h1>The Psychic Game</h1>
+        <p>Guess what letter i'm thinking of : </p>
+        <p >Wins: <span id="wins">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
+        <p>Guesses left : <span id="guess-count-remaining">10</span></p>
+        <p>Your guesses so far : <span id="guess-so-far"></span></p>
+        <p id="win-or-loose"></p>
+        <div id="gameover"></div>
         <script src="assets/javascript/game.js">
         </script>
     </body>
+
