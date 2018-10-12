@@ -5,11 +5,7 @@ body {
     
 }
 
-h1 {
-    font-family: 'Permanent Marker', 'Roboto', sans-serif;
-}
-
-#gameOver{
+/* #gameOver{
     height: 200px;
     width: 500px;
     background: linear-gradient(#F3CA6B, #F3706C);
@@ -26,7 +22,7 @@ h1 {
     z-index: 2;
     display: none;
     
-}
+} */
 
 p {
   font-size: 20px;
@@ -35,10 +31,24 @@ p {
 .winGame {
     color:  #99B898; 
     font-size: 20px;
+    display: block
 }
 
 .looseGame{
     color: 	#DC143C;
     font-size: 20px;
+    display: block;
     
+}
+
+.state {
+    display: none;
+}
+
+button {
+    padding: 15px 40px;
+    color: #fff;
+    font-family: 'Permanent Marker', 'Roboto', sans-serif;
+    font-size: 20px;
+    background: #6B8E23;
 }
