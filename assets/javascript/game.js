@@ -1,12 +1,4 @@
-
-// Game variables
 let alphabetListArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-
-let randomLetterGenerator = ()=>{
-    let randomLetterIndex = Math.floor(Math.random()*26);
-    return randomLetterIndex;
-}
-
 // counts the number of wins
 let wins = document.querySelector("#wins");
 // counts the number of losses
@@ -20,61 +12,78 @@ let winOrLooseGame = document.querySelector("#win-or-loose");
 // reset button
 let resetButton = document.querySelector("#reset");
 // generates the randomely guessed letter
-let randomGuessedLetter = alphabetListArray[randomLetterGenerator()];
+let randomGuessedLetter = randomLetterGenerator();
 let guessCount = 10;
-let guessCountScore = 10;
+let= guessCountScore = 10;
 let winCount = 0;
 let looseCount = 0;
 let isGameOver = false;
 
+resetButton.addEventListener("click",function(){
+    window.location.reload();
+    // randomLetterGenerator();
+    // randomGuessedLetter = randomLetterGenerator();
+    // winCount = 0;
+    // wins.textContent = winCount;
+    // looseCount = 0; 
+    // losses.textContent = looseCount;
+    // guessCount = 10;
+    // remainingGuess.textContent = guessCount;
+    // letterGuessedSoFarDisplay.textContent  = "";
+    // winOrLooseGame.classList.toggle("state");
+    // isGameOver = false;
+});
 
-// Game Events
+console.log(randomGuessedLetter);
 
-   
-   resetButton.addEventListener("click",()=>{
-       winCount = 0;
-       wins.textContent = winCount;
-        looseCount = 0; 
-        losses.textContent = looseCount;
-        guessCount = 10;
-        remainingGuess.textContent = guessCount;
-        letterGuessedSoFarDisplay.textContent  = "";
-        winOrLooseGame.classList.toggle("state");
-        randomLetterGenerator();
 
-   });
-
-    document.addEventListener("keypress",(e)=>{
-        randomLetterGenerator()
-        letterGuessedSoFarDisplay.textContent  += " " + e.key;
-        if(e.key == randomGuessedLetter){
-            winCount++;
-            wins.textContent = winCount;
-            if(winCount == guessCountScore){
-                winOrLooseGame.classList.toggle("winGame");
-                winOrLooseGame.textContent = "You Win, your English must be awesome!!!";
+// if(!isGameOver){
+       document.addEventListener("keypress",(event)=>{
+           if(!isGameOver){
+            letterGuessedSoFarDisplay.textContent  += " " + event.key;
+            if(event.key === randomGuessedLetter){
+                winCount++;
+                wins.textContent = winCount;
+                randomLetterGenerator();
+                randomGuessedLetter = randomLetterGenerator();
+                console.log(randomGuessedLetter);
+                if(winCount === guessCountScore){
+                    // isGameOver = true;
+                    winOrLooseGame.classList.toggle("winGame");
+                    winOrLooseGame.textContent = "You win";
+                    isGameOver = true;
+                    
+                }
+            } else {
+                looseCount++;
+                losses.textContent = looseCount;
+                guessCount--;
+                remainingGuess.textContent = guessCount;
+                if(looseCount === guessCountScore){
+                    winOrLooseGame.classList.toggle("looseGame");
+                    winOrLooseGame.textContent = "Try Again";
+                    isGameOver = true;
                 
-            }
-        }
-        else if(e.key !== randomGuessedLetter){
-            guessCount--;
-            remainingGuess.textContent = guessCount;
-            looseCount++;
-            losses.textContent = looseCount;
-            if(looseCount == guessCountScore){
-                winOrLooseGame.classList.toggle("looseGame");
-                winOrLooseGame.textContent = "You Loose, work on your Alphabets bro!!!";
-                
-            }
-
+                } 
+            
         }
         
+       
+        }
     });
-            
+    
+// }
+function randomLetterGenerator(){
+    let randomLetterIndex = Math.floor(Math.random()*alphabetListArray.length);
+    return alphabetListArray[randomLetterIndex];
+}
 
 
-console.log(randomLetterGenerator());
+   
 
+
+   
+   
 
 
 
